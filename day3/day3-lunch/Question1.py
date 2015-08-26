@@ -14,7 +14,7 @@ for sample in metadata[metadata["sex"] == "female"]["sample"]:
 Sxl2 = []
 for sample in metadata[metadata["sex"] == "male"]["sample"]:
     df2 = pd.read_table("~/qbb2015/stringtie/" + sample + "/t_data.ctab")
-    roi2 = df["t_name"].str.contains("FBtr0331261")
+    roi2 = df2["t_name"].str.contains("FBtr0331261")
     Sxl2.append(df2[roi2]["FPKM"].values) #hay que definir un list
     
 plt.figure()
