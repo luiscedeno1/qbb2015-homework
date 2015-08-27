@@ -17,6 +17,8 @@ plt.ylabel("mRNA Abundance (FPKM) in SRR072893")
 plt.xlabel("log FPKM Values")
 plt.savefig("question2histogram.png")
 
+#  RECUERDA colocar los labels para la grafica ANTES de colocar el plt.savefig
+
 
 
 
