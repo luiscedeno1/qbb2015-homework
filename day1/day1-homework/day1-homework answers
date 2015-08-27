@@ -1,0 +1,39 @@
+Day 1 - Homework
+Basic Exercises (Luis Cedeno-Rosario)
+
+1. Run the following commands to download the StringTie output for SRP004442:
+	DONE
+
+2. Generate a quality control report for the reads in SRR072893.fastq using FastQC:
+	Commands:
+		/Users/cmdb/qbb2015/day1 $ gunzip SRR072893.fastq.gz 
+		/Users/cmdb/qbb2015/day1 $ fastqc SRR072893.fastq 
+		/Users/cmdb/qbb2015/day1 $ ls
+		SRR072893-1mil.fastq	SRR072893_fastqc.html	myFirstScript.sh
+		SRR072893.fastq		SRR072893_fastqc.zip
+		/Users/cmdb/qbb2015/day1 $ open SRR072893_fastqc.html
+		
+3. Map reads to BDGP6 using HISAT:
+	Commands:
+		/Users/cmdb/qbb2015/day1 $ hisat -x  ~/qbb2015/genomes/BDGP6 -U SRR072893.fastq -p 4 -S BDGP6.sam
+		21892898 reads; of these:
+		  21892898 (100.00%) were unpaired; of these:
+		    4868452 (22.24%) aligned 0 times
+		    16824102 (76.85%) aligned exactly 1 time
+		    200344 (0.92%) aligned >1 times
+		77.76% overall alignment rate
+		
+4. Convert .sam to .bam, sort, and index using SAMtools:
+	Commands:
+		/Users/cmdb/qbb2015/day1 $ samtools view -bT SRR072893.fa BDGP6.sam > BDGP6.bam
+		/Users/cmdb/qbb2015/day1 $ samtools sort BDGP6.bam BDGP6_sorted
+		/Users/cmdb/qbb2015/day1 $ samtools index BDGP6_sorted.bam
+		
+5. Quantitate sorted .bam file using StringTie:
+	Commands:
+		/Users/cmdb/qbb2015/day1 $ stringtie BDGP6_sorted.bam -p 4 -e -G ~/qbb2015/genomes/BDGP6.Ensembl.81.gtf -o ~/qbb2015/day1/answers2 -B
+		
+6. Debug the qbb2015/assignments/day1-homework/doAnalysis.sh Bash script
+	Output:  ???
+		
+
