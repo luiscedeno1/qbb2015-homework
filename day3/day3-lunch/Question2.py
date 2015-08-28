@@ -11,7 +11,7 @@ df = file_name1[file_name1["FPKM"] > 0]
 
 #  Esto se usa para contruir la grafica
 plt.figure()
-plt.hist(np.log(df["FPKM"].values))
+plt.hist(np.log(df["FPKM"].values), color="grey")
 plt.title("FPKM values in SRR072893")
 plt.ylabel("mRNA Abundance (FPKM) in SRR072893")
 plt.xlabel("log FPKM Values")
