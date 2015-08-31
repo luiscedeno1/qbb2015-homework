@@ -26,11 +26,11 @@ E_VAL = [x[1] for x in LIST]
 print LIST[0]
 SCORES, E_VAL in LIST
 
-a = -np.log10(SCORES)
-b = np.log10(E_VAL)
+a = np.log10(SCORES)
+b = -np.log10(E_VAL)
 
 plt.figure()
-plt.scatter(a, b, color="green")
+plt.scatter(b, a, color="green")
 plt.title("Scatterplot of Scores and E-Values")
 plt.xlabel("log of E_VAL")
 plt.ylabel("log of SCORES")
