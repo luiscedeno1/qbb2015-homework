@@ -3,7 +3,7 @@
 import numpy as np
 import copy as cp
 
-# Venn diagrams are in the day4-lunch folder
+# Question 3 codes (1b) and Venn diagrams are in the day4-lunch folder
 # Extend the chrombits package we made in class to create the set of intervals corresponding to a ChromosomeLocationsBitArrays instance
 
 class ChromosomeLocationBitArrays (object):
